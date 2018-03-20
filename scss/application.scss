@@ -1,0 +1,482 @@
+@import "base/variables";
+@import "base/mixins";
+@import "base/base";
+@import "components/header";
+@import "components/footer";
+@import "components/weirdo";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+* {
+  margin: 0;
+  padding: 0;
+  //overflow-x: hidden;
+}
+
+.social-tw, .social-fb {
+  font-size: 1.5em!important;
+}
+
+.social-icons {
+  text-align: right!important;
+}
+
+body {
+  font: 18px/1.4 "PT Sans", Serif;
+  color: #464749;
+  overflow-x: hidden!important;
+  background-color: #ffffff;
+}
+
+.jumbotron {
+
+  background-image: url(../img/family.jpg);
+  background-size: cover;
+  height: 100vh;
+  padding-bottom: 0!important;
+  margin-bottom: 0!important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+
+}
+
+
+
+.bg-overlay {
+  height: 100vh;
+  background: rgba(56, 57, 59, 0.5);
+}
+
+
+
+h1 {
+  text-align: center;
+  color: #85d9ff !important;
+  @media #{$brk-large}, #{$brk-xlarge}, #{$brk-medium}, #{$brk-narrow}
+  {
+    margin-top: 25vh;
+    font-size: 4.5rem!important;
+    line-height: 5rem!important;
+
+  }
+
+  @media #{$brk-spnarrow}, #{$brk-iphone} {
+    margin-top: 15vh;
+    font-size: 3rem!important;
+    line-height: 4rem!important;
+  }
+
+}
+
+h1 span {
+  background: rgba(0,0,0,0.2);
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+h3 {
+  color:white;
+}
+
+h3 span {
+  background: rgba(0,0,0,0.2);
+}
+
+h5 {
+
+  font-size: 1.3rem;
+  text-align: center;
+  color:$blue;
+  margin-top: 50px;
+  @media #{$brk-spnarrow}, #{$brk-iphone} {
+    font-size: 1.4rem!important;
+    line-height: 2rem!important;
+  }
+}
+
+h5 span{
+
+  color: white;
+}
+
+.sorting {
+  //display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  vertical-align: text-top;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+
+}
+
+p span {
+  background-color: #46bcff;
+  font-size: 1.8rem;
+  color:white;
+  line-height: 3rem;
+  }
+
+#page-wrap {
+  margin: 50px;
+}
+p {
+  margin: 20px 0;
+}
+
+/*
+Generic Styling, for Desktops/Laptops
+*/
+table {
+  width: 100%;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  font-size: 1.5rem;
+
+
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: $blue!important;
+  border-color: $blue!important;
+}
+
+thead>tr>th {
+  padding:15px!important;
+}
+
+.table>thead>tr>th {
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+//.table>thead>tr>th:nth-child(1) {
+//  text-align: left!important;
+//}
+
+
+tbody tr:hover {
+  background-color: $light;
+}
+
+tbody>tr>td {
+  vertical-align: middle !important;
+  //font-size: 1.3rem;
+}
+
+  th {
+    background: $grey;
+
+    border-top: 1px solid $dark!important;
+    border-bottom: 1px solid $dark!important;
+    color: $dark;
+    font-weight: normal;
+    background-repeat: no-repeat;
+    background-position: 3% center;
+  }
+
+  /*
+  Max width before this PARTICULAR table gets nasty
+  This query will take effect for any screen smaller than 760px
+  and also iPads specifically.
+  */
+  @media only screen and (max-width: 768px),
+  (min-device-width: 300px) and (max-device-width: 768px) {
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    table {
+      width: 98%!important;
+    }
+
+    tr:nth-child(even) {background: #e7e7e7
+    }
+
+
+}
+
+@media (min-width: 1024px) {
+
+
+#table td:nth-child(4),
+#table td:nth-child(5),
+#table td:nth-child(6),
+#table td:nth-child(7),
+#table td:nth-child(8),
+#table td:nth-child(9),
+#table td:nth-child(10)
+{
+  width: 8%;
+}
+
+#table td:nth-child(2) {
+    width: 20% !important;
+    text-align: center!important;
+
+  }
+
+  #table td:nth-child(1) {
+    width: 30% !important;
+
+  }
+
+  //#table td:nth-child(1) {
+  //  width: 2% !important;
+  //}
+
+  #table td:nth-child(3),
+  #table td:nth-child(4),
+  #table td:nth-child(5),
+  #table td:nth-child(6),
+  #table td:nth-child(7),
+  #table td:nth-child(8),
+  #table td:nth-child(9){
+    text-align: center;
+
+
+  }
+
+
+}
+
+//th.tooltip{
+//  position:relative;
+//  z-index: 37;
+//}
+//
+.tooltiptext {
+  margin-right: 20px;
+  display:none;
+  position:absolute;
+  z-index:100;
+  opacity:0.9;
+  border: 1px solid $grey;
+  background-color:#eee;
+  text-align: center;
+  vertical-align: text-top;
+  top:auto;
+  padding: 3px;
+  color:$dark;
+
+
+  @media #{$brk-large}, #{$brk-xlarge}, #{$brk-medium}, #{$brk-narrow}
+  {
+    max-width: 20%;
+    min-height: 20px;
+  }
+
+  @media #{$brk-spnarrow}, #{$brk-iphone} {
+    max-width: 80%;
+    min-height: 20px;
+  }
+}
+
+th:hover span.tooltiptext{
+  display:block;
+}
+
+
+
+/* ---------- pagination -------------*/
+
+div.pager {
+  text-align: center;
+  margin: 1em 0;
+}
+
+div.pager span {
+  display: inline-block;
+  width: 1.8em;
+  height: 1.8em;
+  line-height: 1.8;
+  text-align: center;
+  cursor: pointer;
+  background: $grey;
+  color: $light;
+  margin-right: 0.5em;
+}
+
+div.pager span.active {
+  background: #faa51b;
+}
+
+
+
+/*---------------- Bar charts ----------------- */
+
+.bar:hover {
+  fill: $dark;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 0.5px;
+  shape-rendering: crispEdges;
+}
+
+
+.bar_shadow {
+  fill: #e3e3e3;
+}
+
+/*---------------- Hover Tips ----------------- */
+
+.d3-tip {
+  line-height: 1.3;
+  font-weight: normal;
+  padding: 6px;
+  background: rgba(113, 114, 116, 1);
+  color: #fff;
+  border-radius: 2px;
+  width: 100px;
+}
+
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 6px;
+  width: 100%;
+  line-height: 1;
+  color: $dark;
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+
+}
+
+
+label {
+  font-size: 1.5rem!important;
+  color: grey!important;
+}
+
+input#input,
+input#myInput {
+  font-size: 1.2rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 20px;
+  margin-top: 10px;
+  color: rgb(113, 114, 116) !important;
+
+}
+
+//.active-h {
+//  font-weight: bold;
+//}
+
+
+.red {
+  color:$red;
+  font-weight: 800;
+}
+
+.blue {
+  color:$blue;
+  font-weight: 800;
+}
+
+.no-data {
+  font-size: 1.0rem;
+}
+
+
+button {
+  font-size: 1rem;
+  //border-width: 2px;
+  background-color: $dark;
+  color:$white;
+  border:none;
+  box-shadow: none;
+  padding:5px;
+}
+
+button:hover {
+  color: $light;
+  background-color: $blue;
+}
+
+//----------------- sliders style -------------------
+.ui-slider-horizontal {
+  height: .4em!important;
+  //background-color:  #272729!important;
+}
+
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+  border: 1px solid $blue!important;
+  background: $blue!important;
+  font-weight: normal;
+  color:  $dark!important;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: -.4em!important;
+  margin-left: -.4em!important;
+}
+
+.ui-corner-all {
+  border-radius: 0!important;
+}
+
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1.0em!important;
+  height: 1.0em!important;
+  cursor: default;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.2); }
+
+
+
+
+.rect {
+  background: #d0e4f7; /* Old browsers */
+  background: -moz-linear-gradient(top, #d0e4f7 0%, #73b1e7 17%, #0a77d5 46%, #539fe1 91%, #87bcea 100%)!important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d0e4f7 0%,#73b1e7 17%,#0a77d5 46%,#539fe1 91%,#87bcea 100%)!important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d0e4f7 0%,#73b1e7 17%,#0a77d5 46%,#539fe1 91%,#87bcea 100%)!important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=0 );
+}
+
+
+.dashed {
+  border-bottom: dashed 1px $blue;
+}
+
+.fa-arrow-down {
+   color:$red;
+ }
+
+.fa-arrow-up {
+  color:$blue;
+}
